@@ -28,6 +28,7 @@ export default class WeatherForecast5DaysList extends Component {
         const currWeather_URL = `http://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&appid=4bd5f2851709651df9c5e59f308d2af6&units=metric`
         axios.get(currWeather_URL)
         .then(res =>  { 
+            console.log("Current Weather:")
             console.log(res.data)
             this.setState({currWeather: res.data, city: res.data.name, 
                 lat: res.data.coord.lat, lon: res.data.coord.lon})
@@ -41,6 +42,7 @@ export default class WeatherForecast5DaysList extends Component {
         const Forecast_URL = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city}&appid=4bd5f2851709651df9c5e59f308d2af6&units=metric`
         axios.get(Forecast_URL)
             .then(res => {
+                console.log("5 Days Weather Forecast(40 timestapms):")
                 console.log(res.data)
                 this.setState({forecasts: res.data.list, country: res.data.city.country})
             }).catch(error => {
@@ -53,6 +55,7 @@ export default class WeatherForecast5DaysList extends Component {
         const location_URL = `https://api.timezonedb.com/v2.1/get-time-zone?key=JS6RXYNKQQR9&format=json&by=position&lat=${this.state.lat}&lng=${this.state.lon}`
         axios.get(location_URL)
         .then(res => {
+            console.log("City Timezome Details:")
             console.log(res.data)
             this.setState({timezone: res.data.zoneName})
         }).catch(error => {
@@ -62,8 +65,8 @@ export default class WeatherForecast5DaysList extends Component {
 
     componentDidMount = () => {
         this.getCurrentWeather()
-        this.get5DaysWeatherForcast()
         this.getTimeZoneStr()//
+        this.get5DaysWeatherForcast()
     }
 
     onValueChange = (event) => {
@@ -71,7 +74,7 @@ export default class WeatherForecast5DaysList extends Component {
     }
 
     onSubmitForm = (event) => {
-        event.preventdefault()
+        //event.preventdefault()
         this.componentDidMount()
     }
     

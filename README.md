@@ -15,3 +15,5 @@ However, only 4 sets of data are being displayed. I excluded current date's fore
 the next 4 days with the estimated weather forecast time of 12:00:00. 
 This estimated time is referred to the "dt_txt" respond attribute.
 Please check https://openweathermap.org/forecast5 for more details.
+
+All axios api responds will be displayed in console. Please check console for data details.
