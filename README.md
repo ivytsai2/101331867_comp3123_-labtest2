@@ -5,6 +5,8 @@ WeatherForecast5DaysList.js is where I used axios to access REST API,
 and passed relevent data to its children (WeatherForecast1Day.js and CurrentWeather.js files).
 A city search bar is added on top for users to change city and the city's weather forecast will be displayed.
 ![Toronto Weather Forecast](S1.png)
+![London Weather Forecast](S2.png)
+![Sydney Weather Forecast](S3.png)
 
 CurrentWeather.js contains the component of current weather data and html.
 
