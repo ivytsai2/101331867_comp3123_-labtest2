@@ -36,7 +36,7 @@ export default class WeatherForecast5DaysList extends Component {
         })
     }
 
-    // get 5 days forcast including today's
+    // get 5 days weather forecast including today's
     get5DaysWeatherForcast = () => {
         const Forecast_URL = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city}&appid=4bd5f2851709651df9c5e59f308d2af6&units=metric`
         axios.get(Forecast_URL)
@@ -48,7 +48,7 @@ export default class WeatherForecast5DaysList extends Component {
             })
     }
 
-    // get city timezone
+    // get city timezone name
     getTimeZoneStr = () => {
         const location_URL = `https://api.timezonedb.com/v2.1/get-time-zone?key=JS6RXYNKQQR9&format=json&by=position&lat=${this.state.lat}&lng=${this.state.lon}`
         axios.get(location_URL)
